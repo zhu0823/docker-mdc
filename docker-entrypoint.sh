@@ -30,4 +30,24 @@ fi
 
 echo "Starting..."
 cd /data
+
+# /Users/zhu0823/Docker/mdc/config
+# /Users/zhu0823/Docker/mdc/data
+# DELETE_FILES
+# DELETE_SIZE
+
+echo "---Clean File  Start---"
+
+# 从环境变量中获取 DELETE_FILES 的值
+# 遍历文件名列表并删除文件
+#for file in $(echo "$DELETE_FILES" | tr ',' '\n'); do
+#    find . -name "$file" -type f -print -delete
+#done
+# 删除所有小于DELETE_SIZE的文件
+find . -name "*.mp4" -type f -size -"${DELETE_SIZE}" -print -delete
+# 删除所有html
+find . -name "*.html" -type f -print -delete
+
+echo "---Clean File  End---"
+
 gosu ${USER} /app/Movie_Data_Capture
