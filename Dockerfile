@@ -95,10 +95,10 @@ FROM debian:11-slim
 ARG BUILD_DATE
 ARG VERSION
 
-LABEL build_version="catfight360.com version:${VERSION} Build-date:${BUILD_DATE}"
-LABEL maintainer="VergilGao"
+LABEL build_version="github.com/zhu0823 version:${VERSION} Build-date:${BUILD_DATE}"
+LABEL maintainer="zhu0823"
 LABEL build_from="https://github.com/yoshiko2/Movie_Data_Capture"
-LABEL org.opencontainers.image.source="https://github.com/VergilGao/docker-mdc"
+LABEL org.opencontainers.image.source="https://github.com/zhu0823/docker-mdc"
 
 ENV TZ="Asia/Shanghai"
 ENV UID=0
