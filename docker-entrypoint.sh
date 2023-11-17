@@ -44,9 +44,9 @@ echo "---Clean File  Start---"
 #    find . -name "$file" -type f -print -delete
 #done
 # 删除所有小于DELETE_SIZE的文件
-find . -name "*.mp4" -type f -size -"${DELETE_SIZE}" -print -delete
-# 删除所有html
-find . -name "*.html" -type f -print -delete
+if [ -n "${DELETE_SIZE}" ]; then
+    find . -name "*.mp4" -type f -size -"${DELETE_SIZE}" -print -delete
+fi
 
 echo "---Clean File  End---"
 

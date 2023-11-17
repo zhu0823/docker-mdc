@@ -104,6 +104,7 @@ ENV TZ="Asia/Shanghai"
 ENV UID=0
 ENV GID=0
 ENV UMASK=022
+ENV DELETE_SIZE=100M
 
 ADD docker-entrypoint.sh docker-entrypoint.sh
 COPY --from=build-stage /tmp/mdc/dist/Movie_Data_Capture /app
