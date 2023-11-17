@@ -101,9 +101,9 @@ LABEL build_from="https://github.com/yoshiko2/Movie_Data_Capture"
 LABEL org.opencontainers.image.source="https://github.com/VergilGao/docker-mdc"
 
 ENV TZ="Asia/Shanghai"
-ENV UID=99
-ENV GID=100
-ENV UMASK=002
+ENV UID=0
+ENV GID=0
+ENV UMASK=022
 
 ADD docker-entrypoint.sh docker-entrypoint.sh
 COPY --from=build-stage /tmp/mdc/dist/Movie_Data_Capture /app
