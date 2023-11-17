@@ -120,6 +120,6 @@ RUN \
     && useradd -d /config -s /bin/sh mdc \
     && chown -R mdc /data /config
 
-VOLUME [ "/data", "/config" ]
+VOLUME [ "/data", "/config", "/dest" ]
 
 ENTRYPOINT ["/docker-entrypoint.sh"]

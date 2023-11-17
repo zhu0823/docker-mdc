@@ -51,3 +51,10 @@ fi
 echo "---Clean File  End---"
 
 gosu ${USER} /app/Movie_Data_Capture
+
+echo "--- Move JAV_output Start ---"
+# 移动整理后的文件到指定目录
+if [ -d "dest" ]; then
+    mv -v JAV_output/* dest
+fi
+echo "--- Move JAV_output End ---"
