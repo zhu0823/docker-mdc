@@ -54,7 +54,13 @@ gosu ${USER} /app/Movie_Data_Capture
 
 echo "--- Move JAV_output Start ---"
 # 移动整理后的文件到指定目录
-if [ -d "dest" ]; then
-    mv -v JAV_output/* dest
+if [ -d "/dest" ]; then
+    for file in $(ls JAV_output); do
+        echo "file:${file}"
+        cp -r -v JAV_output/${file} /dest
+        if [ -d "JAV_output/${file}" ]; then
+            rm -r -v JAV_output/${file}    
+        fi
+    done
 fi
 echo "--- Move JAV_output End ---"
