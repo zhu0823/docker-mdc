@@ -64,14 +64,14 @@ RUN \
     && apt-get clean -y
 
 ARG MDC_SOURCE_VERSION
-ENV MDC_SOURCE_VERSION=${MDC_SOURCE_VERSION:-7184aed2ed1b841ee2416c765d3e6d59ddb9df41}
+ENV MDC_SOURCE_VERSION=${MDC_SOURCE_VERSION:-fd72abcac8dfd176b5d8ddac8d5c31e1979d9b69}
 
 ARG DLIB_WHL_DIR
 COPY --from=dlib-bin-builder $DLIB_WHL_DIR $DLIB_WHL_DIR
 
 RUN mkdir -p /tmp/mdc && cd /tmp/mdc \
     # get mdc source code
-    && wget -O- https://github.com/yoshiko2/Movie_Data_Capture/archive/$MDC_SOURCE_VERSION.tar.gz | tar xz -C /tmp/mdc --strip-components 1 \
+    && wget -O- https://github.com/zhu0823/Movie_Data_Capture/archive/$MDC_SOURCE_VERSION.tar.gz | tar xz -C /tmp/mdc --strip-components 1 \
     && python3 -m venv /opt/venv && . /opt/venv/bin/activate \
     && pip install --upgrade \
         pip \
@@ -94,6 +94,8 @@ FROM debian:11-slim
 
 ARG BUILD_DATE
 ARG VERSION
+ENV BUILD_DATE=2024-01-04 17:24
+ENV VERSION=7.0.3
 
 LABEL build_version="github.com/zhu0823 version:${VERSION} Build-date:${BUILD_DATE}"
 LABEL maintainer="zhu0823"
