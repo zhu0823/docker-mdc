@@ -94,8 +94,8 @@ FROM debian:11-slim
 
 ARG BUILD_DATE
 ARG VERSION
-ENV BUILD_DATE=2024-01-04 17:24
-ENV VERSION=7.0.3
+ENV BUILD_DATE="2024-01-04 17:24"
+ENV VERSION="7.0.3"
 
 LABEL build_version="github.com/zhu0823 version:${VERSION} Build-date:${BUILD_DATE}"
 LABEL maintainer="zhu0823"
